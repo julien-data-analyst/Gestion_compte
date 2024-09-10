@@ -59,6 +59,7 @@ def retirer(montant, mdp):
     """
     pass
 
+# This is where the functions are tested
 while True:
     print()
     print('Appuyez sur n pour nouveau compte')
@@ -74,26 +75,33 @@ while True:
     action = action[0]  # utilise juste la première lettre
     print()
 
+    # This is where an account is created
     if action == 'n':
         print('Nouveau compte :')
+        nouveau_compte(nom_compte, solde_compte, mdp_compte)
 
-
+    # Get the bank balance
     elif action == 's':
         print('Obtenir le Solde :')
+        obtenir_solde(mdp_compte)
 
-
+    # Deposits an amount
     elif action == 'd':
         print('Dépôt :')
+        deposer(solde_compte, mdp_compte)
 
 
+    # Withdraws an amount
     elif action == 'r':
         print('Retrait :')
+        retirer(solde_compte, mdp_compte)
 
-
+    # Shows the bank acc information
     elif action == 'a':
         print('Affichage des informations du compte :')
+        afficher()
 
-
+    # Exits the while loop
     elif action == 'q':
         print('Vous avez choisi de quitter. À bientôt !')
         break
