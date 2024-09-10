@@ -83,7 +83,7 @@ while True:
     # Get the bank balance
     elif action == 's':
         print('Obtenir le Solde :')
-        obtenir_solde(mdp_compte)
+        obtenir_solde(mdp_compte=input("Enter your password"))
 
     # Deposits an amount
     elif action == 'd':
