@@ -32,7 +32,36 @@ def obtenir_solde(mdp):
     """
     pass
 
-def deposer(montant, mdp):
+def deposer(montant, mdp ,  valeur_depot):
+    
+     global  solde_compte , mdp_compte
+
+
+
+    if mdp_compte == mdp :
+
+        Print('Mot de passe Correct \n')
+        Print(f"Tentative de déposer {montant} $ \n")
+
+        if  montant >= 0 :
+
+            solde_compte = solde_compte + montant
+
+            Print("Dépot Réussie !")
+            Print(f"Le Solde est de {solde_compte} ")
+        else :
+
+            Print('Dépot Invalide !')
+            return
+    
+
+    else:
+
+        Print('Erreur Mot de passe invalide \n')
+        return
+    pass
+
+
     """
     Dépose un montant dans le compte si le mot de passe est correct et le montant positif.
 
@@ -43,9 +72,36 @@ def deposer(montant, mdp):
     Retourne :
     float : Le nouveau solde du compte ou None si le montant est négatif ou le mot de passe incorrect.
     """
-    pass
 
 def retirer(montant, mdp):
+
+    global  solde_compte , mdp_compte
+
+
+
+    if mdp_compte == mdp :
+
+        Print('Mot de passe Correct \n')
+        Print(f"Tentative de retirer {montant} $ \n")
+
+        if solde_compte - montant >= 0 :
+
+            solde_compte = solde_compte - montant
+
+            Print("Retrait Réussie !")
+            Print(f"Le Solde est de {solde_compte} ")
+        else :
+
+            Print('Solde Insuffisant !')
+            return
+    
+
+    else:
+
+        Print('Erreur Mot de passe invalide \n')
+        return
+    pass
+        
     """
     Retire un montant du compte si le montant est positif, le mot de passe correct, et le solde suffisant.
 
@@ -57,7 +113,7 @@ def retirer(montant, mdp):
     float : Le nouveau solde du compte ou None si le montant est négatif, le mot de passe incorrect,
             ou le solde insuffisant.
     """
-    pass
+    
 
 while True:
     print()
