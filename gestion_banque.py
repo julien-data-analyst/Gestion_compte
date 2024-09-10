@@ -12,13 +12,23 @@ def nouveau_compte(nom, solde, mdp):
     solde (float) : Le solde initial du compte.
     mdp (str) : Le mot de passe du compte.
     """
-    pass
+
+    # Déclaration variables globales
+    global nom_compte, solde_compte, mdp_compte
+
+    nom_compte = nom
+    solde_compte = solde
+    mdp_compte = mdp
+
+
 
 def afficher():
     """
     Affiche les détails du compte, incluant le nom du titulaire, le solde et le mot de passe.
     """
-    pass
+
+    # Affichage du compte
+    print(f"Description du compte : \n -Nom du compte : {nom_compte} \n -Solde du compte : {solde_compte} \n -Mot de passe : {mdp_compte}")
 
 def obtenir_solde(mdp):
     """
@@ -30,7 +40,13 @@ def obtenir_solde(mdp):
     Retourne :
     float : Le solde du compte ou None si le mot de passe est incorrect.
     """
-    pass
+    global nom_compte, mdp_compte, solde_compte
+
+    if mdp == mdp_compte:
+        return solde_compte
+    else:
+        return None
+    
 
 def deposer(montant, mdp):
     """
@@ -84,6 +100,7 @@ while True:
     elif action == 's':
         print('Obtenir le Solde :')
         obtenir_solde(mdp_compte)
+
 
     # Deposits an amount
     elif action == 'd':
