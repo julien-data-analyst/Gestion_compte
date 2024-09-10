@@ -30,7 +30,13 @@ def obtenir_solde(mdp):
     Retourne :
     float : Le solde du compte ou None si le mot de passe est incorrect.
     """
-    pass
+    global nom_compte, mdp_compte, solde_compte
+
+    if mdp == mdp_compte:
+        return solde_compte
+    else:
+        return None
+    
 
 def deposer(montant, mdp):
     """
@@ -80,6 +86,7 @@ while True:
 
     elif action == 's':
         print('Obtenir le Solde :')
+        print(obtenir_solde('ccc'))
 
 
     elif action == 'd':
